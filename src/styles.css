@@ -1,0 +1,298 @@
+:root {
+  --grafito:#26343C;
+  --concreto:#E9E7E2;
+  --naranja:#E47736;
+  --blanco:#FFFFFF;
+  --gris:#69757B;
+  --fondo:#F7F7F5;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
+body {font-family:Inter,Arial,sans-serif;color:var(--grafito);background:white}
+a {text-decoration:none;color:inherit}
+button {font:inherit;cursor:pointer}
+.container {width:min(1160px,92%);margin:auto}
+
+/* ENCABEZADO */
+header {
+  position:sticky;top:0;z-index:20;
+  background:white;border-bottom:1px solid #e8e8e8;
+}
+.nav {
+  min-height:78px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
+}
+.logo {display:flex;align-items:center;gap:10px}
+.logo-icon {
+  background:var(--naranja);color:white;width:42px;height:42px;
+  display:grid;place-items:center;border-radius:9px;
+  font:800 25px Montserrat;
+}
+.logo-name {font:800 21px Montserrat;letter-spacing:-1px}
+.logo-name small {
+  display:block;font:700 8px Inter;letter-spacing:1.5px;
+  color:var(--gris);margin-top:3px;
+}
+.menu {display:flex;gap:28px;align-items:center}
+.menu a {font-size:13px;font-weight:600}
+.menu a:hover {color:var(--naranja)}
+.btn {
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:9px;background:var(--naranja);color:white;
+  padding:14px 20px;border-radius:6px;
+  font-size:13px;font-weight:800;border:0;
+  transition:.2s;
+}
+.btn:hover {transform:translateY(-2px);filter:brightness(.95)}
+.menu-toggle {display:none;background:none;border:0;font-size:25px}
+
+/* PORTADA */
+.hero {
+  background:var(--grafito);color:white;
+  min-height:570px;display:grid;
+  grid-template-columns:1fr 1fr;align-items:center;
+  gap:40px;padding:75px 5%;
+}
+.eyebrow {
+  color:var(--naranja);font-size:10px;
+  font-weight:800;letter-spacing:2px;
+}
+.hero h1 {
+  font:800 clamp(38px,5vw,65px)/1.12 Montserrat;
+  margin:22px 0;
+}
+.hero h1 span {color:#F09A62}
+.hero p {color:#D4DADD;line-height:1.8;font-size:15px;max-width:500px}
+.hero-actions {display:flex;align-items:center;gap:22px;margin-top:28px;flex-wrap:wrap}
+.hero-actions a:last-child {font-size:13px;font-weight:700}
+.hero-art {
+  min-height:350px;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#394951,#172329);
+  border-radius:15px;overflow:hidden;
+}
+.panel-art {
+  position:absolute;width:55%;height:65%;
+  background:linear-gradient(135deg,#F0EFEA,#9DA8A8);
+  transform:skewY(-12deg) rotate(-8deg);
+  box-shadow:15px 25px 40px #101a20;
+}
+.panel-art.two {
+  width:42%;height:53%;transform:skewY(-12deg) rotate(8deg);
+  background:linear-gradient(135deg,#D6D8D3,#75838A);
+  margin-top:80px;margin-left:-65px;
+}
+.art-caption {
+  position:absolute;bottom:20px;right:20px;
+  font:800 10px/1.6 Montserrat;letter-spacing:2px;text-align:right;
+}
+
+/* SECCIONES */
+section {scroll-margin-top:90px}
+.section {padding:85px 0}
+.section-title {
+  display:flex;justify-content:space-between;
+  align-items:end;gap:25px;margin-bottom:35px;
+}
+.section-title h2,.about h2,.contact h2 {
+  font:700 clamp(27px,3.5vw,40px) Montserrat;margin-top:12px;
+}
+.section-title p {font-size:13px;color:var(--gris);max-width:330px;line-height:1.7}
+
+/* CATEGORIAS */
+.categories {display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.category-card {
+  border:1px solid #e0e2df;border-radius:12px;
+  overflow:hidden;background:white;
+}
+.category-image {
+  height:245px;background:linear-gradient(135deg,#48575E,#1E2C32);
+  display:grid;place-items:center;color:#F09A62;
+  position:relative;
+}
+.category-image svg {width:90px;height:90px}
+.category-image.columns {
+  background:linear-gradient(135deg,#E9E7E2,#AEB6B3);
+  color:var(--grafito);
+}
+.category-image span {
+  position:absolute;bottom:18px;left:20px;
+  color:white;font-size:10px;letter-spacing:2px;font-weight:800;
+}
+.category-info {padding:25px}
+.category-info h3 {font:700 23px Montserrat}
+.category-info p {font-size:13px;line-height:1.8;color:var(--gris);margin:12px 0}
+.category-info button {
+  background:none;border:0;color:var(--naranja);
+  font-size:12px;font-weight:800;
+}
+
+/* PRODUCTOS */
+.products-section {background:var(--fondo)}
+.filters {display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
+.filter {
+  border:1px solid #d7dcda;background:white;
+  padding:10px 17px;border-radius:30px;
+  font-size:12px;font-weight:700;color:var(--grafito);
+}
+.filter.active,.filter:hover {background:var(--grafito);color:white}
+.search {
+  width:100%;max-width:370px;padding:13px 15px;
+  border:1px solid #d7dcda;border-radius:7px;
+  margin-bottom:25px;font-size:13px;
+}
+.product-grid {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.product {
+  background:white;border:1px solid #e2e4e1;
+  border-radius:10px;overflow:hidden;
+  transition:.2s;
+}
+.product:hover {transform:translateY(-4px);box-shadow:0 12px 30px #26343c12}
+.product-image {
+  height:180px;background:linear-gradient(135deg,#E8E7E1,#BFC5C2);
+  display:grid;place-items:center;color:#59676C;
+}
+.product-image svg {width:65px;height:65px;stroke-width:1.2}
+.product-info {padding:20px}
+.product-info small {color:var(--naranja);font-weight:800;font-size:10px;letter-spacing:1px}
+.product-info h3 {font:700 16px Montserrat;margin:9px 0}
+.product-info p {font-size:12px;line-height:1.7;color:var(--gris);min-height:40px}
+.product-info button {
+  width:100%;margin-top:15px;background:var(--grafito);
+  color:white;border:0;padding:12px;border-radius:5px;
+  font-size:12px;font-weight:700;
+}
+.product-info button:hover {background:var(--naranja)}
+.empty {padding:30px;color:var(--gris);text-align:center;grid-column:1/-1}
+
+/* EMPRESA */
+.about {
+  background:var(--concreto);padding:75px 0;
+}
+.about-grid {
+  display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;
+}
+.about p {font-size:14px;line-height:1.9;color:#59666B;margin-top:15px}
+.benefits {display:grid;gap:17px}
+.benefit {
+  background:white;border-radius:8px;padding:18px;
+  display:flex;gap:14px;align-items:center;
+}
+.benefit-icon {font-size:24px;color:var(--naranja)}
+.benefit strong {font-size:13px}
+.benefit small {display:block;color:var(--gris);font-size:11px;margin-top:4px}
+
+/* CONTACTO */
+.contact {
+  background:var(--grafito);color:white;padding:65px 0;
+}
+.contact-inner {
+  display:flex;justify-content:space-between;
+  align-items:center;gap:30px;flex-wrap:wrap;
+}
+.contact p {color:#C4CED1;font-size:13px;line-height:1.8;margin-top:10px}
+.contact-number {font:700 22px Montserrat;margin-top:12px}
+
+/* FOOTER */
+footer {padding:28px 0;color:var(--gris);font-size:11px}
+.footer-inner {
+  display:flex;justify-content:space-between;
+  align-items:center;gap:20px;flex-wrap:wrap;
+}
+footer strong {font:800 17px Montserrat;color:var(--grafito)}
+
+/* BOTON FLOTANTE */
+.whatsapp-float {
+  position:fixed;right:22px;bottom:22px;z-index:30;
+  background:#20B968;color:white;width:58px;height:58px;
+  border-radius:50%;display:grid;place-items:center;
+  box-shadow:0 5px 20px #0003;font-size:25px;
+}
+
+/* RESPONSIVE */
+@media(max-width:760px) {
+  .menu {
+    display:none;position:absolute;top:78px;left:0;width:100%;
+    background:white;padding:20px;flex-direction:column;
+    align-items:stretch;border-bottom:1px solid #ddd;
+  }
+  .menu.open {display:flex}
+  .menu-toggle {display:block}
+  .nav>.btn {display:none}
+  .hero {grid-template-columns:1fr;padding:55px 5%;gap:30px}
+  .hero-art {min-height:260px}
+  .section {padding:60px 0}
+  .section-title {display:block}
+  .categories,.about-grid {grid-template-columns:1fr}
+  .product-grid {grid-template-columns:1fr 1fr}
+  .category-image {height:190px}
+}
+@media(max-width:480px) {
+  .product-grid {grid-template-columns:1fr}
+  .hero h1 {font-size:40px}
+  .contact-inner {display:block}
+  .contact-inner .btn {margin-top:20px}
+}
+
+/* ===== EXTRAS APP ===== */
+.product-image img,.cat-photo {width:100%;height:100%;object-fit:cover}
+.product-info .price {display:block;margin-top:8px;font:700 14px Montserrat;color:var(--grafito)}
+.product-info button.wa {width:100%;margin-top:15px;background:var(--grafito);color:white;border:0;padding:12px;border-radius:5px;font-size:12px;font-weight:700}
+.product-info button.wa:hover {background:var(--naranja)}
+.footer-inner a.acceso {color:var(--gris);opacity:.6}
+.center-screen {min-height:100vh;display:grid;place-items:center;background:var(--fondo);padding:20px}
+.card-msg {background:white;border:1px solid #e2e4e1;border-radius:12px;padding:32px;max-width:460px;width:100%}
+.card-msg h2 {font:700 22px Montserrat;margin-bottom:14px}
+.card-msg p {font-size:14px;line-height:1.7;color:var(--gris);margin-top:10px}
+.loading {padding:60px 20px;text-align:center;color:var(--gris)}
+
+/* ===== PANEL DE ADMINISTRACIÓN ===== */
+.adm {min-height:100vh;background:var(--fondo)}
+.adm-top {background:var(--grafito);color:white;padding:14px 4%;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.adm-top .who {font-size:12px;color:#C4CED1}
+.adm-top a,.adm-top button {color:white;background:none;border:1px solid #ffffff44;padding:8px 14px;border-radius:6px;font-size:12px;font-weight:700}
+.adm-top .right {display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.adm-tabs {display:flex;gap:6px;padding:16px 4% 0;flex-wrap:wrap;border-bottom:1px solid #e0e2df;background:white}
+.adm-tabs button {background:none;border:0;padding:12px 18px;font-size:13px;font-weight:700;color:var(--gris);border-bottom:3px solid transparent}
+.adm-tabs button.on {color:var(--grafito);border-bottom-color:var(--naranja)}
+.adm-body {width:min(1000px,94%);margin:26px auto 60px}
+.adm-head {display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.adm-head h2 {font:700 22px Montserrat}
+.btn.sm {padding:10px 16px;font-size:12px}
+.btn.gris {background:var(--grafito)}
+.btn.claro {background:white;color:var(--grafito);border:1px solid #d7dcda}
+.btn.rojo {background:#C0392B}
+.btn:disabled {opacity:.55;cursor:wait;transform:none}
+.adm-list {display:grid;gap:10px}
+.adm-row {background:white;border:1px solid #e2e4e1;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:14px}
+.adm-row .thumb {width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,#E8E7E1,#BFC5C2);display:grid;place-items:center;font-size:26px;color:#59676C;overflow:hidden;flex:none}
+.adm-row .thumb img {width:100%;height:100%;object-fit:cover}
+.adm-row .info {flex:1;min-width:0}
+.adm-row .info b {font-size:14px;display:block;overflow:hidden;text-overflow:ellipsis}
+.adm-row .info small {color:var(--gris);font-size:12px}
+.adm-row .acts {display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.tag {display:inline-block;font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 8px;border-radius:20px;background:var(--concreto);color:var(--grafito);margin-left:6px}
+.tag.off {background:#f3d6d2;color:#8e2b1f}
+.form {background:white;border:1px solid #e2e4e1;border-radius:12px;padding:22px;margin-bottom:22px;display:grid;gap:14px}
+.form label {display:grid;gap:6px;font-size:12px;font-weight:700;color:var(--grafito)}
+.form input[type=text],.form input[type=email],.form input[type=password],.form input[type=number],.form select,.form textarea {
+  width:100%;padding:12px;border:1px solid #d7dcda;border-radius:7px;font:inherit;font-size:14px;font-weight:400;background:white}
+.form textarea {min-height:80px;resize:vertical}
+.form .two {display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form .check {display:flex;align-items:center;gap:8px;font-weight:600}
+.form .btns {display:flex;gap:10px;flex-wrap:wrap}
+.form .preview {width:140px;height:100px;border-radius:8px;object-fit:cover;border:1px solid #e2e4e1}
+.aviso {padding:12px 14px;border-radius:8px;font-size:13px;line-height:1.6;margin-bottom:16px}
+.aviso.ok {background:#e3f4ea;color:#1c6b3e}
+.aviso.error {background:#fbe4e1;color:#8e2b1f}
+.aviso.info {background:#fff3e8;color:#8a4a1c}
+.sep {margin:30px 0 14px;font:700 17px Montserrat}
+.help {font-size:12px;color:var(--gris);line-height:1.6;font-weight:400}
+@media(max-width:620px){
+  .form .two {grid-template-columns:1fr}
+  .adm-row {flex-wrap:wrap}
+  .adm-row .acts {width:100%;justify-content:flex-start}
+  .adm-tabs button {padding:10px 12px}
+}
